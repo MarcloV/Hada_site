@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css?family=Arapey');
+
+body {}
+
+.cont100 {
+	width: 100% !important;
+	max-width: 100% !important;
+	margin: 0 -.75rem;
+}
+
+.colacc-left {
+	padding: 0 !important;
+}
+
+.colacc-co {
+	background-color: #7CCBE1;
+	height: 100vh;
+}
+
+.imageacc {
+	height: 50vh;
+	background-image: url(img/chat-assis-avec-ordinateur-.jpg);
+	background-position: right;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.textacc {
+	font-family: 'Arapey', serif;
+	color: #39A298;
+	text-align: center;
+	font-size: 1.7rem;
+	padding: 50px;
+}
+
+.card-form {
+	margin-top: 25vh !important;
+	padding: 0 30px;
+	text-align: center;
+}
+
+.text-signin {
+	color: #fff;
+}
+
+.text-signin a {
+	color: #fff;
+	text-decoration: underline;
+}
+
+.text-signin a:hover {
+	color: #39a298;
+}
+
+.cont100.signin {
+	display: inline-block;
+	height: 100vh;
+	background-image: url(img/Sans-titre-2.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+/*-----------------*/
+
+.sidenav {}
+
+.side-header {
+	padding: 10px;
+	background-color: #616161;
+	color: #fff;
+}
+
+.side-header a {
+	color: #fff;
+}
+
+.side-content {
+	padding: 30px 10px;
+
+}
+
+.side-content .bloc-chat {
+	padding: 10px 0;
+	border-bottom: #d8d8d8 1px solid;
+}
+
+.side-content a .bloc-chat p {
+	margin: 0;
+	text-transform: uppercase;
+	color: #000;
+}
+
+.side-content .bloc-chat .photo-chat {
+	width: 40px;
+	border-radius: 20px;
+	float: left;
+	margin-right: 20px;
+}
