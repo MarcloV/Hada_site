@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Arapey');
 
+#fond{ 
+	background-color: rgba(238, 232, 232, 0.89) ;
+}
 body {}
 
 .cont100 {
