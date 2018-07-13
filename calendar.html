@@ -1,0 +1,169 @@
+<!doctype html>
+
+<html>
+
+<head>
+	<title>Page Title</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+	<!-- JQuery -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+	<!-- material icons -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<!--Calendar-->
+	<link href='css/fullcalendar.css' rel='stylesheet' />
+	<link href='css/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+	<script src='js/moment.min.js'></script>
+	<script src='js/fullcalendar.min.js'></script>
+	<script src='js/fr.js'></script>
+	<script>
+		$(document).ready(function() {
+			var viewCal;
+			if ($(window).width() < 992) {
+				viewCal = 'listWeek';
+			} else {
+				viewCal = 'month';
+			}
+
+			$('#calendar').fullCalendar({
+				locale: 'fr',
+				defaultDate: '2018-03-12',
+				editable: false,
+				defaultView: viewCal,
+				eventLimit: true, // allow "more" link when too many events
+				events: [{
+						title: 'All Day Event',
+						start: '2018-03-01'
+					},
+					{
+						title: 'Long Event',
+						start: '2018-03-07',
+						end: '2018-03-10'
+					},
+					{
+						id: 999,
+						title: 'Repeating Event',
+						start: '2018-03-09T16:00:00'
+					},
+					{
+						id: 999,
+						title: 'Repeating Event',
+						start: '2018-03-16T16:00:00'
+					},
+					{
+						title: 'Conference',
+						start: '2018-03-11',
+						end: '2018-03-13'
+					},
+					{
+						title: 'Meeting',
+						start: '2018-03-12T10:30:00',
+						end: '2018-03-12T12:30:00'
+					},
+					{
+						title: 'Lunch',
+						start: '2018-03-12T12:00:00'
+					},
+					{
+						title: 'Meeting',
+						start: '2018-03-12T14:30:00'
+					},
+					{
+						title: 'Happy Hour',
+						start: '2018-03-12T17:30:00'
+					},
+					{
+						title: 'Dinner',
+						start: '2018-03-12T20:00:00'
+					},
+					{
+						title: 'Birthday Party',
+						start: '2018-03-13T07:00:00'
+					},
+					{
+						title: 'Click for Google',
+						url: 'http://google.com/',
+						start: '2018-03-28'
+					}
+				]
+			});
+			
+			$('.fc-right button').addClass('waves-effect waves-light btn');
+			$('.fc-right button').removeClass('fc-prev-button fc-button fc-state-default fc-corner-left');
+		});
+
+	</script>
+</head>
+
+<body>
+
+	<!--NAVBAR UP-->
+
+	<nav class="grey darken-2">
+		<div class="nav-wrapper">
+			<div class="row">
+				<div class="col s12">
+					<a href="#" class="brand-logo"><img src="img/logo-w.png" alt=""></a>
+					<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+	<!--NAVBAR RIGHT-->
+	<div id="slide-out" class="sidenav">
+		<div class="side-header">
+			<a href="#" data-target="slide-out" class="sidenav-close"><i class="material-icons">close</i></a><br/>
+			<a href="#">Mon compte</a><br/>
+			<a href="">Déconnexion</a>
+		</div>
+		<div class="side-content">
+			<a href="#">
+				<div class="bloc-chat valign-wrapper">
+					<img src="img/IMG_20170307_133743_071.jpg" alt="" class="photo-chat">
+					<p>Ada</p>
+				</div>
+			</a>
+		</div>
+	</div>
+
+
+
+
+	<div class="calendar">
+		<div class="row">
+			<div class="col s12">
+				<div class="card">
+					<ul class="tabs">
+						<li class="tab col s3"><a href="#test1">Chat 1</a></li>
+						<li class="tab col s3"><a class="active" href="#test2">Chat 2</a></li>
+						
+					</ul>
+					<div id='calendar' class="grey lighten-4"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!--SCRIPT NAVBAR RIGHT-->
+	<script>
+		$(document).ready(function() {
+			$('.sidenav').sidenav({
+				edge: 'right',
+				draggable: 'true'
+			});
+		});
+
+	</script>
+
+</body>
+
+</html>

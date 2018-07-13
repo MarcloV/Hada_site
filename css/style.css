@@ -8,6 +8,9 @@ body {}
 	margin: 0 -.75rem;
 }
 
+
+/*ACCUEIL*/
+
 .colacc-left {
 	padding: 0 !important;
 }
@@ -60,7 +63,10 @@ body {}
 	background-size: cover;
 }
 
-/*-----------------*/
+
+
+
+/*-------SIDEBAR----------*/
 
 .sidenav {}
 
@@ -95,4 +101,83 @@ body {}
 	border-radius: 20px;
 	float: left;
 	margin-right: 20px;
+}
+
+nav a.sidenav-trigger {
+	display: block !important;
+	float: right;
+}
+
+nav .brand-logo {
+	display: flex !important;
+	flex-direction: column;
+	justify-content: center;
+	height: 100%;
+}
+
+nav .brand-logo img {
+	height: 45px;
+}
+
+
+/*ADMINISTRATION*/
+
+.admin .left .card {
+	background-color: #7ccbe1;
+}
+
+.admin .left .card .row,
+.admin .center .card .row {
+	margin: 0;
+}
+
+.admin .left .card img.pp {
+	width: 100%;
+	border-radius: 50%;
+	margin: .75rem 0;
+}
+
+.admin .pseudo {
+	color: #fff;
+	text-align: center;
+	font-size: 2rem;
+	margin-bottom: 20px;
+}
+
+.admin .text-left {
+	font-family: 'Arapey', serif;
+	font-size: 1.4rem;
+}
+
+.admin .center .card {
+	background-color: #7ccbe1;
+	padding: 20px;
+}
+
+.admin .center .card .card-cat {
+	background-color: #fff;
+	padding: 10px;
+}
+
+.admin .center .card .card-cat img {
+	width: 70px;
+	border-radius: 50%;
+}
+
+.calendar .row .card {
+	padding: 20px;
+	background-color: #7ccbe1;
+}
+
+.calendar .tab {
+
+}
+
+.calendar #calendar {
+	padding: 20px;
+	background-color: #fff;
+}
+
+.calendar #calendar .fc-button-group button {
+	margin: 5px;
 }
