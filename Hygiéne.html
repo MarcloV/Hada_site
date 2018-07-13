@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+	<title>Page Hygiéne</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+	<!-- JQuery -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+	<!-- material icons -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <div class="col s12 m7 colacc-co">
+        <h3 style="text-align: center">Hygiéne</h3>
+        <div class="container">
+            <ul class="collapsible expandable">
+                <li>
+                    <div class="collapsible-header"><h5>Brossage </h5></div>
+                    <div class="collapsible-body" id="fond"><!-- fond pardéfaut est le bleu du site, je l'ai changer dans le style.css en gris clair-->
+                        <span>Lorem ipsum dolor sit amet.</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><h5>Toilettage/Bain</h5></div>
+                    <div class="collapsible-body" id="fond">
+                        <span>Lorem ipsum dolor sit amet.</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><h5>Quel type de litiére ?</h5></div>
+                    <div class="collapsible-body" id="fond">
+                        <span>Lorem ipsum dolor sit amet.</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><h5>Soin des Griffes et oreilles </h5></div>
+                    <div class="collapsible-body" id="fond">
+                        <span>Lorem ipsum dolor sit amet.</span>
+                    </div>
+                </li>
+            </ul>  
+        </div>             
+    </div>
+      
+    <script type="text/javascript"> 
+        var elem = document.querySelector('.collapsible.expandable');
+        var instance = M.Collapsible.init(elem, {
+        accordion: false
+        });
+    </script>
+
+</body>
+
+</html>
