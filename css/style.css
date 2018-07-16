@@ -22,7 +22,7 @@ body {}
 
 .imageacc {
 	height: 50vh;
-	background-image: url(img/chat-assis-avec-ordinateur-.jpg);
+	background-image: url(../img/chat-assis-avec-ordinateur-.jpg);
 	background-position: right;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -58,7 +58,7 @@ body {}
 .cont100.signin {
 	display: inline-block;
 	height: 100vh;
-	background-image: url(img/Sans-titre-2.jpg);
+	background-image: url(../img/Sans-titre-2.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -97,10 +97,15 @@ body {}
 }
 
 .side-content .bloc-chat .photo-chat {
-	width: 40px;
-	border-radius: 20px;
+	width: 48px;
+	border-radius: 24px;
 	float: left;
 	margin-right: 20px;
+}
+
+.side-content .bloc-chat p {
+	float: left;
+	margin: 0;
 }
 
 nav a.sidenav-trigger {
@@ -180,4 +185,36 @@ nav .brand-logo img {
 
 .calendar #calendar .fc-button-group button {
 	margin: 5px;
+}
+
+
+
+
+/*MARCELLO*/
+
+.cont-resume{
+		background-color: #7CCBE1!important;
+}
+.card .row{
+	margin:0!important;
+	padding: 20px;
+}
+#h5-resume{
+	color :#FFFFFF; font-weight:600;
+}
+
+#ligne{
+	background-color:#7CCBE1; height: 2px;
+}
+.color-rouge{
+	color:#CB8A8A;
+}
+#popup{
+	width: 50%;
+}
+.color-vert{
+	color: #009688;
+}
+.bg-color-rouge{
+	background-color: #fff;
 }
