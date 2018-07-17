@@ -15,14 +15,15 @@
 <div id="slide-out" class="sidenav">
 	<div class="side-header">
 		<a href="#" data-target="slide-out" class="sidenav-close"><i class="material-icons">close</i></a><br/>
-		<a href="">Mon compte</a><br/>
+		<a href="account2.php">Mon compte</a><br/>
+		<a href="parameters.php">Paramètres</a><br/>
 		<a href="">Déconnexion</a>
 	</div>
 	<div class="side-content">
 			<div class="bloc-chat">
 				<ul>
-					<li>
-						<a href="profil-chat.php">
+					<li class="li-chat">
+						<a href="profil_chat.php">
 							<img src="img/IMG_20170307_133743_071.jpg" alt="" class="photo-chat"><p>Ada</p>
 						</a>
 					</li>
@@ -41,6 +42,9 @@
 					</li>
 					<li>
 						<a href="securite.php">Securité</a>
+					</li>
+					<li>
+						<a href="calendar.php">Calendrier</a>
 					</li>
 					<li>
 						<a href="">Veterinaires</a>
