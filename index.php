@@ -2,20 +2,7 @@
 
 <html>
 
-<head>
-	<title>Page Title</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="initial-scale=1.0">
-	<link rel="stylesheet" href="css/style.css">
-	<!-- Compiled and minified CSS -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
-	<!-- JQuery -->
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-	<!-- Compiled and minified JavaScript -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-	<!-- material icons -->
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head>
+<?php include "header.php"?>
 
 <body>
 
@@ -32,7 +19,7 @@
 					<div class="col s12 m6 offset-m3">
 						<div class="card card-form">
 							<div class="row">
-								<form class="col s12">
+								<form class="col s12" action="" onsubmit="return false">
 
 									<div class="row">
 										<div class="input-field col s12">
@@ -46,20 +33,44 @@
 										</div>
 
 										<div class="col s12">
-											<a class="waves-effect waves-light btn">Se connecter</a>
+											<button type="submit" name="action" id="login" class="waves-effect waves-light btn">Se connecter</button>
+										</div>
+										<div id= "verif">
+
 										</div>
 									</div>
 
 								</form>
 							</div>
 						</div>
-						<p class="text-signin">Vous n’avez pas encore de compte ? Vous pouvez vous inscrire en <a href="signin.html">cliquant ici</a> !</p>
+						<p class="text-signin">Vous n’avez pas encore de compte ? Vous pouvez vous inscrire en <a href="signin.php">cliquant ici</a> !</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	<script>
+			$('#login').click(function() {
+				if ($('#email').val() != "" && $('#password').val() != "") {
+					$.ajax({
+						url: "login_form.php",
+						data: {
+							email: $('#email').val(),
+							mdp: $('#password').val(),
+							cookie: $('#remember').prop('checked')
+						},
+						type: "POST",
+						success: function(data) {
+							$('#verif').html(data);
+window.location = 'http://localhost/hada/Hada_site-branchpm/admin.php'
+						}
+					});
+				} else {
+					$('#verif').html('ça a buggué déso');
+				}
+			});
 
+		</script>
 </body>
 
 </html>
