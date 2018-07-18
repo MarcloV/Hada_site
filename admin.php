@@ -38,7 +38,7 @@
 
 			<div class="col s12 m9 center">
 
-				<div id="card" class="card-blue">
+				<div id="card">
 					<div class="front">
 						<div class="card">
 							<div class="row">
@@ -98,67 +98,85 @@
 											<input id="race" type="text">
 											<label for="race">Race/Type</label>
 										</div>
+										<!-- ajout type de poil et couleur de robe -->
 										<div class="input-field col s12">
+											<input id="robe" type="text">
+											<label for="race">Couleur de la robe</label>
+										</div>
+										<div class="input-field col s12">
+											<p><label for="">Type de pelage</label></p>
 											<p>
-												<label for="">Sexe</label>
+												<label>
+												<input name="pelage" type="radio" checked />
+												<span>Court</span>
+											</label>
 											</p>
 											<p>
 												<label>
-													<input name="sexe" type="radio" checked />
-													<span>Male</span>
-												</label>
+												<input name="pelage" type="radio" checked />
+												<span>Mi-long</span>
+											</label>
 											</p>
 											<p>
 												<label>
-													<input name="sexe" type="radio" />
-													<span>Femelle</span>
-												</label>
+												<input name="pelage" type="radio" />
+												<span>long</span>
+											</label>
 											</p>
 										</div>
 										<div class="input-field col s12">
+											<p><label for="">Sexe</label></p>
 											<p>
-												<label for="">Stérilisé</label>
+												<label>
+												<input name="sexe" type="radio" checked />
+												<span>Male</span>
+											</label>
 											</p>
 											<p>
 												<label>
-													<input name="ster" type="radio" />
-													<span>Oui</span>
-												</label>
-											</p>
-											<p>
-												<label>
-													<input name="ster" type="radio" checked/>
-													<span>Non</span>
-												</label>
+												<input name="sexe" type="radio" />
+												<span>Femelle</span>
+											</label>
 											</p>
 										</div>
 										<div class="input-field col s12">
+											<p><label for="">Stérilisé</label></p>
 											<p>
-												<label for="">Identification</label>
+												<label>
+												<input name="ster" type="radio"/>
+												<span>Oui</span>
+											</label>
 											</p>
 											<p>
 												<label>
-													<input name="ide" type="radio" checked />
-													<span>Tatouage</span>
-												</label>
+												<input name="ster" type="radio" checked/>
+												<span>Non</span>
+											</label>
+											</p>
+										</div>
+										<div class="input-field col s12">
+											<p><label for="">Identification</label></p>
+											<p>
+												<label>
+												<input name="ide" type="radio" checked />
+												<span>Tatouage</span>
+											</label>
 											</p>
 											<p>
 												<label>
-													<input name="ide" type="radio" checked />
-													<span>Puce</span>
-												</label>
+												<input name="ide" type="radio" checked />
+												<span>Puce</span>
+											</label>
 											</p>
 											<p>
 												<label>
-													<input name="ide" type="radio" />
-													<span>Non</span>
-												</label>
+												<input name="ide" type="radio" />
+												<span>Non</span>
+											</label>
 											</p>
 										</div>
 										<div class="file-field input-field col s12">
-											<p>
-												<label for="">Photo</label>
-											</p>
+										<p><label for="">Photo</label></p>
 											<div class="btn">
 												<span>Choisir un fichier</span>
 												<input type="file">
