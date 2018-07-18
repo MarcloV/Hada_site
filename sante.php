@@ -8,57 +8,114 @@
 
 	<?php include "nav.php"?>
 
-	<div class="row">
-		<div class="col m3 #f5f5f5 grey lighten-4 card">
-			<div class="row">
-				<div class="col m12 center-align">
-					<h6>INFO SANTE GENERALE</h6>
-					<img src="img/photo_chat.jpg" alt="" class="circle responsive-img">
-				</div>
-				<p class="color-vert">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, incidunt, culpa. Rem dolores illo itaque sunt tenetur minus molestiae qui aliquam saepe distinctio reiciendis ex nulla, hic maxime reprehenderit blanditiis. </p>
-			</div>
-		</div>
-
-		<div class="col m9">
-			<div class="card cont-resume">
-				<div class="row center-align">
-					<h5 id="h5-resume">SANTE</h5>
-					<ul id="tabs-swipe-demo" class="tabs #f5f5f5 grey lighten-4">
-						<li class="tab col s3"><a href="#test-swipe-1">CHAT 1</a></li>
-						<li class="tab col s3"><a class="active" href="#test-swipe-2">CHAT 2</a></li>
-						<li class="tab col s3"><a href="#test-swipe-3">CHAT 3</a></li>
-					</ul>
-				</div>
-
+	<div class="row">		
+		<div class="col s12">
+			<div class="card card-blue">
 				<div class="row">
-					<div class="col m12 #f5f5f5 grey lighten-4">
-						<div class="divider"></div>
-						<div class="section color-vert">
-							<h5>Section 1</h5>
-							<p>Stuff</p>
-						</div>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem sed cum pariatur maiores architecto voluptatem voluptatum. Praesentium esse aliquam repellendus quae vitae, maxime beatae at. Sint, mollitia. Quidem tempore culpa consequatur quam tempora sequi eos atque odio! Unde maiores aspernatur dolorum fugit, odit magni cupiditate, omnis, voluptate labore nobis nihil id quo. Itaque id sapiente maxime tempora et! Provident, facere. </p>
-						<div class="divider" id="ligne"></div>
-						<div class="section color-rouge">
-							<div class="col m2"></div>
-							<div class="col m8">
-								<div class="card" id="popup">
-									<ul class="collapsible">
-										<li>
-											<div class="collapsible-header"><i class="material-icons">filter_drama</i>NOTIFICATIONS</div>
-											<div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-										</li>
+					<div class="col s12">
+						<h5 class="title-page">SANTE</h5>
+					</div>
+					<div class="col s12">
+						<ul class="tabs tab-chats">
+							<li class="tab col s3"><a class="active" href="#chat">Santé des chats</a></li>
+							<li class="tab col s3"><a href="#info">Informations</a></li>
+						</ul>
+					</div>
 
-									</ul>
-								</div>
-							</div>
-							<div class="col m2"></div>
+					<div class="col s12">
+						<div class="col s12 grey lighten-4" id="chat">
+							<?php include 'php/poid-chat.php'?>
+							<canvas id="myChart" width="400" height="120"></canvas>
+							<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+							<script>
+								var ctx = document.getElementById("myChart").getContext('2d');
+								var myChart = new Chart(ctx, {
+									type: 'line',
+									data: {
+										labels: <?php echo $j_dates ?>,
+										datasets: [{
+											label: 'Ada',
+											data: <?php echo $j_poids ?>,
+											backgroundColor: [
+												'rgba(255, 99, 132, 0.2)'
+											],
+											borderColor: [
+												'rgba(255,99,132,1)',
+											],
+											borderWidth: 1
+										}]
+									},
+									options: {
+										spanGaps: true,
+										scales: {
+											yAxes: [{
+												ticks: {
+													beginAtZero: true
+												}
+											}]
+										}
+									}
+								});
+
+							</script>
+
+							<table>
+								<tr>
+									<td><label for="">Poids</label><input type="text" id="poid"></td>
+									<td><label for="date">Date</label><input id="date" type="text" class="datepicker" value="<?php echo date('d/m/Y'); ?>"></td>
+									<td><button class="btn waves-effect waves-light" id="ajout-poid">Ajouter une mesure</button></td>
+								</tr>
+							</table>
+							<div id="result"></div>
+							<!--<div class="divider"></div>-->
 						</div>
+						<div class="col s12 grey lighten-4" id="info">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia nisi cupiditate sapiente voluptates iste officia fuga blanditiis saepe unde necessitatibus quis facere dolor eius illum, ducimus ea? Accusantium, placeat, nam.
+						</div>
+						
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+
+	<script>
+		$(document).ready(function() {
+			$('.tabs').tabs({
+				swipeable: true
+			});
+
+			$('.datepicker').datepicker({
+				format: 'dd/mm/yyyy',
+				i18n: {
+					months: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+					monthsShort: ['Jan.', 'Fév.', 'Mar.', 'Avr.', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.', 'Oct.', 'Nov.', 'Déc.'],
+					weekdays: ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"],
+					weekdaysShort: ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"],
+				},
+				yearRange: 20
+			});
+		});
+	</script>
+
+	<script>
+		$(document).ready(function() {
+			$('#ajout-poid').click(function() {
+				$.ajax({
+					url: "php/form-poid-chat.php",
+					data: {
+						date: $('#date').val(),
+						poid: $('#poid').val()
+					},
+					type: "POST",
+					success: function(data) {
+						$('#result').html(data);
+					}
+				});
+			});
+		});
+
+	</script>
 
 		<script>
 			$(document).ready(function() {

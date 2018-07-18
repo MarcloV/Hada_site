@@ -4,7 +4,7 @@
 	<div class="nav-wrapper">
 		<div class="row">
 			<div class="col s12">
-				<a href="#" class="brand-logo"><img src="img/logo-w.png" alt=""></a>
+				<a href="#" class="brand-logo"><img src="img/logo-w.png" alt="" /></a>
 				<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 			</div>
 		</div>
@@ -15,7 +15,8 @@
 <div id="slide-out" class="sidenav">
 	<div class="side-header">
 		<a href="#" data-target="slide-out" class="sidenav-close"><i class="material-icons">close</i></a><br/>
-		<a href="">Mon compte</a><br/>
+		<a href="account2.php">Mon compte</a><br/>
+		<a href="parameters.php">Paramètres</a><br/>
 		<a href="logout.php" >Déconnexion</a>
 	</div>
 	<div class="side-content">
@@ -35,7 +36,7 @@
 							while($line = mysqli_fetch_assoc($query)) {
 
 					?>
-					<li>
+					<li class="li-chat">
 						<a href="profil-chat.php">
 							<img src="img/IMG_20170307_133743_071.jpg" alt="" class="photo-chat"><p><?php echo $line['nom'];?></p>
 						</a>
@@ -48,6 +49,9 @@
 			<div class="link">
 				<ul>
 					<li>
+						<a href="admin.php">Accueil</a>
+					</li>
+					<li>
 						<a href="sante.php">Santé</a>
 					</li>
 					<li>
@@ -58,6 +62,9 @@
 					</li>
 					<li>
 						<a href="securite.php">Securité</a>
+					</li>
+					<li>
+						<a href="calendar.php">Calendrier</a>
 					</li>
 					<li>
 						<a href="">Veterinaires</a>
