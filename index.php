@@ -62,7 +62,7 @@
 						type: "POST",
 						success: function(data) {
 							$('#verif').html(data);
-window.location = 'http://localhost/hada/Hada_site-branchpm/admin.php'
+							window.location.assign('admin.php')
 						}
 					});
 				} else {

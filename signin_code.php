@@ -4,22 +4,27 @@ require_once 'connect.php';
 $email=$_POST['email'];
 $pass=$_POST['pass'];
 $spass=password_hash($pass,PASSWORD_BCRYPT);
-$select="SELECT * FROM users WHERE email ='$email'";
+$select="SELECT * FROM utilisateur WHERE email ='$email'";
 $execute=mysqli_query($connect,$select);
 $check_email=mysqli_num_rows($execute);
-if($check_email==1){
-  echo "<h2> This email is registered </h2>";
 
+$response = array();
+
+if($check_email==1){
+  $response["success"] = false;
+  $response["message"] = "cet email est deja utilisé.";
 }else{
-  $query= "INSERT INTO users ( email,password)  VALUES ('$email','$spass')";
+  $query= "INSERT INTO utilisateur (email,password)  VALUES ('$email','$spass')";
   $result= mysqli_query($connect,$query);
   if ($result) {
-  echo "<h2> Registation sucessful, Thanks!!!</h2>";
+    $response["success"] = true;
+    $response["message"] = "Votre inscription est terminée, veuillez vous connecter";
   }else{
-    echo "<h2> Registation failed</h2>";
+    $response["success"] = false;
+    $response["message"] = "Echec de l'inscription (" . mysqli_error($con) . ")";
   }
 }
 
-
+echo json_encode($response);
 
  ?>

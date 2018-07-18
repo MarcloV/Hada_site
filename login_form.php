@@ -8,7 +8,7 @@ if ($connect) {
 		$mdp = $_POST['mdp'];
 		//$cookie = $_POST['cookie'];
 
-		$verif_infos = "SELECT password, id FROM users WHERE email = '$email'";
+		$verif_infos = "SELECT password, id FROM utilisateur WHERE email = '$email'";
 		$query = mysqli_query($connect, $verif_infos);
 		$checkmail = mysqli_num_rows($query);
 
@@ -21,16 +21,6 @@ if ($connect) {
 			if (password_verify($mdp, $verif_mdp)) {
 				session_start();
 				$_SESSION['id'] = $ssid;
-				// if ($cookie == "true") {
-				// 	if(isset($_COOKIE['id'])) {
-				// 		setcookie("id", "", time()-10);
-				// 	}
-				// 	$t = 30 * 24 * 60 * 60; //temps en seconde
-				// 	setcookie('id', $ssid,time()+$t);
-				// 	echo '<script>location.reload();</script>';
-				// } else {
-				// 	echo '<script>location.reload();</script>';
-				// }
 			} else {
 				echo "Adresse email ou mot de passe incorrect";
 			}

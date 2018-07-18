@@ -5,38 +5,48 @@
 <?php include "header.php"?>
 <script type="text/javascript">
 
-	function confirmPass(){
-		var  pass=document.getElementById('password').value;
-		var cpass=document.getElementById('confirm_password').value;
-		if(cpass !=pass){
+$(document).ready(function () {
+	$("#sub").click(function () {
 
-document.getElementById("result").innerHTML= "password not matching, try again";
+		var user_email = $("#email").val();
+		var user_pass = $("#password").val();
+		var user_confirm_pass = $("#confirm_password").val();
 
+		if(user_pass != user_confirm_pass) {
+			$("#result").html('password not matching, try again');
+			return;
+		}
+
+		$.ajax({
+			url: 'signin_code.php',
+			data: { email: user_email, pass: user_pass },
+			type: 'POST',
+			success: function (data) {
+				var json = $.parseJSON(data);
+				
+				if(json.success) {
+					$('.modal-close').click(function(){
+						window.location.assign("index.php");
+					});
+				}
+
+				$('#signup-result').text(json.message);
+				$('#modal-signup').modal();
+				$('#modal-signup').modal('open');
 			}
-	else {
-		$(document).ready(function(){
-
-			$("#sub").click(function(){
-
-				var user_email =$("#email").val();
-				var user_pass =$("#password").val();
-
-				$.ajax({
-					url:'signin_code.php',
-					data:{email:user_email,pass:user_pass},
-					type:'POST',
-					success: function(data){
-    $("#result").html(data);
-window.location = 'http://localhost/hada/Hada_site-branchpm/admin.php'
-					}
-				});
-
-			});
 		});
 
-		}
+	});
+});
+
+	function confirmPass() {
+		var pass = document.getElementById('password').value;
+		var cpass = document.getElementById('confirm_password').value;
+
+		return cpass == pass;
 	}
 </script>
+
 <body>
 
 	<div class="container cont100 signin">
@@ -65,12 +75,21 @@ window.location = 'http://localhost/hada/Hada_site-branchpm/admin.php'
 
 									<div class="col s12">
 
-										<button type="submit" name="sub" id="sub" onclick="confirmPass()" class="waves-effect waves-light btn" >S'inscrire</button>
+										<button type="submit" name="sub" id="sub" class="waves-effect waves-light btn">S'inscrire</button>
 									</div>
 								</div>
 
 							</form>
 							<div id="result"></div>
+							<div id="modal-signup" class="modal">
+								<div class="modal-content">
+									<h4>Inscription</h4>
+									<p id="signup-result"></p>
+								</div>
+								<div class="modal-footer">
+									<a href="#!" class="modal-close waves-effect waves-green btn-flat">Fermer</a>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
