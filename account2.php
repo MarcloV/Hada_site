@@ -10,7 +10,7 @@
 
 	<div class="row">
 
-		<div class="center-align col s6">
+		<div class="center-align col s12 m6">
 			<div class="card card-grey">
 				<div class="row">
 					<div class="col s12">
@@ -28,7 +28,7 @@
 		</div>
 		<!--fin col1-->
 
-		<div class="col s6">
+		<div class="col s12 m6">
 			<div class="row">
 				<div class="col s12">
 					<div class="card card-blue">

@@ -41,29 +41,38 @@
 									<h5 class="title-page">Ajouter un évènement</h5>
 								</div>
 								<form class="col s12 white" style="margin-bottom:40px;">
+									<div class="input-field col s12">
 										<div class="input-field col s12">
-											<div class="input-field col s12">
-												<input id="titre_ev" type="text">
-												<label for="titre_ev">Titre</label>
-											</div>
-											<div class="input-field col s12">
-												<input id="date" type="text" class="datepicker">
-												<label for="date">Date</label>
-											</div>
-											<div class="input-field col s12">
-												<input type="text" class="timepicker">
-												<label for="date">Heure</label>
-											</div>
+											<input id="titre_ev" type="text">
+											<label for="titre_ev">Titre</label>
 										</div>
-									</form>
-									<button class="waves-effect waves-light btn" id="btn-unflip">Annuler</button>&nbsp;&nbsp;<button class="waves-effect waves-light btn">Ajouter</button>
-								</div>
+										<div class="input-field col s12">
+
+											<select multiple>
+												<option value="1" selected>Chat 1</option>
+												<option value="2">Chat 2</option>
+												<option value="3">Chat 3</option>
+											</select>
+											<label>Chat</label>
+										</div>
+										<div class="input-field col s12">
+											<input id="date" type="text" class="datepicker">
+											<label for="date">Date</label>
+										</div>
+										<div class="input-field col s12">
+											<input type="text" class="timepicker">
+											<label for="date">Heure</label>
+										</div>
+									</div>
+								</form>
+								<button class="waves-effect waves-light btn" id="btn-unflip">Annuler</button>&nbsp;&nbsp;<button class="waves-effect waves-light btn">Ajouter</button>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
 
 	<!--Calendar-->
@@ -90,61 +99,8 @@
 				editable: false,
 				defaultView: viewCal,
 				eventLimit: true, // allow "more" link when too many events
-				events: [{
-						title: 'All Day Event',
-						start: '2018-03-01'
-					},
-					{
-						title: 'Long Event',
-						start: '2018-03-07',
-						end: '2018-03-10'
-					},
-					{
-						id: 999,
-						title: 'Repeating Event',
-						start: '2018-03-09T16:00:00'
-					},
-					{
-						id: 999,
-						title: 'Repeating Event',
-						start: '2018-03-16T16:00:00'
-					},
-					{
-						title: 'Conference',
-						start: '2018-03-11',
-						end: '2018-03-13'
-					},
-					{
-						title: 'Meeting',
-						start: '2018-03-12T10:30:00',
-						end: '2018-03-12T12:30:00'
-					},
-					{
-						title: 'Lunch',
-						start: '2018-03-12T12:00:00'
-					},
-					{
-						title: 'Meeting',
-						start: '2018-03-12T14:30:00'
-					},
-					{
-						title: 'Happy Hour',
-						start: '2018-03-12T17:30:00'
-					},
-					{
-						title: 'Dinner',
-						start: '2018-03-12T20:00:00'
-					},
-					{
-						title: 'Birthday Party',
-						start: '2018-03-13T07:00:00'
-					},
-					{
-						title: 'Click for Google',
-						url: 'http://google.com/',
-						start: '2018-03-28'
-					}
-				]
+				events: "php/events.php"
+				
 			});
 
 			$('.fc-right button').addClass('waves-effect waves-light btn');
@@ -186,9 +142,13 @@
 				},
 				yearRange: 20
 			});
-			
+
 			$('.timepicker').timepicker({
 				twelveHour: false
+			});
+
+			$(document).ready(function() {
+				$('select').formSelect();
 			});
 		});
 

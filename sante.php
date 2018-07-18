@@ -9,17 +9,19 @@
 	<?php include "nav.php"?>
 
 	<div class="row">
-		<div class="col m3 #f5f5f5 grey lighten-4 card">
-			<div class="row">
-				<div class="col m12 center-align">
-					<h6>INFO SANTE GENERALE</h6>
-					<img src="img/220x220.png" alt="" class="circle responsive-img">
+		<div class="col s12 m3">
+			<div class="card grey lighten-4">
+				<div class="row">
+					<div class="col m12 center-align">
+						<h6>INFO SANTE GENERALE</h6>
+						<img src="img/220x220.png" alt="" class="circle responsive-img">
+					</div>
+					<p class="color-vert">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, incidunt, culpa. Rem dolores illo itaque sunt tenetur minus molestiae qui aliquam saepe distinctio reiciendis ex nulla, hic maxime reprehenderit blanditiis. </p>
 				</div>
-				<p class="color-vert">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, incidunt, culpa. Rem dolores illo itaque sunt tenetur minus molestiae qui aliquam saepe distinctio reiciendis ex nulla, hic maxime reprehenderit blanditiis. </p>
 			</div>
 		</div>
 
-		<div class="col m9">
+		<div class="col s12 m9">
 			<div class="card card-blue">
 				<div class="row">
 					<div class="col s12">
@@ -41,6 +43,38 @@
 								<p>Stuff</p>
 							</div>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem sed cum pariatur maiores architecto voluptatem voluptatum. Praesentium esse aliquam repellendus quae vitae, maxime beatae at. Sint, mollitia. Quidem tempore culpa consequatur quam tempora sequi eos atque odio! Unde maiores aspernatur dolorum fugit, odit magni cupiditate, omnis, voluptate labore nobis nihil id quo. Itaque id sapiente maxime tempora et! Provident, facere. </p>
+							<canvas id="myChart" width="400" height="200"></canvas>
+							<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+							<script>
+								var ctx = document.getElementById("myChart").getContext('2d');
+								var myChart = new Chart(ctx, {
+									type: 'line',
+									data: {
+										labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+										datasets: [{
+											label: 'Poids',
+											data: [4, 5, 3, 5, 2, 3],
+											backgroundColor: [
+												'rgba(255, 99, 132, 0.2)'
+											],
+											borderColor: [
+												'rgba(255,99,132,1)',
+											],
+											borderWidth: 1
+										}]
+									},
+									options: {
+										scales: {
+											yAxes: [{
+												ticks: {
+													beginAtZero: true
+												}
+											}]
+										}
+									}
+								});
+
+							</script>
 							<div class="divider"></div>
 							<div class="section color-rouge">
 								<div class="col m2"></div>

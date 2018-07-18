@@ -11,25 +11,24 @@
 	<div class="admin">
 		<div class="row">
 			<div class="col s12 m3 left">
-				<div class="card">
+				<div class="card card-grey">
 					<div class="row">
-						<div class="col s12 col-pp">
+						<div class="col s12">
 							<div class="row">
-								<div class="col m12 s4"><img src="img/562824_2759032017078_1554093599_n.jpg" alt="" class="pp">
-								</div>
-								<div class="col m12 s8 valign-wrapper">
-									<h5 class="pseudo">Pauline</h5>
+								<div class="col s12"><img src="img/562824_2759032017078_1554093599_n.jpg" alt="" class="responsive-img circle">
+								
+									<h5 class="title-page">Pauline</h5>
 								</div>
 							</div>
 						</div>
-						<div class="col s12 text-left grey lighten-5">
+						<div class="col s12 text-left">
 							<p class="teal-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto quo consectetur, quas. Sunt, nisi eaque consequuntur esse eos et placeat.</p>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="col s12 m9 center">
-				<div id="card">
+				<div id="card card-blue">
 					<div class="front">
 						<div class="card">
 							<div class="row">

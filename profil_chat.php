@@ -9,35 +9,35 @@
 	<?php include "nav.php"?>
 
 	<div class="row">
-		<div class="col s3">
+		<div class="col s12 m3">
 			<div class="card card-grey">
 				<div class="row">
 					<div class="col s12 center-align">
 						<h6>PHOTO CHAT</h6>
 						<img src="img/IMG_20170307_133743_071.jpg" alt="" class="circle responsive-img">
 					</div>
-					<div class="col m6">
+					<div class="col s6">
 						<img src="img/IMG_20170307_133743_071.jpg" alt="" class="responsive-img">
 					</div>
-					<div class="col m6">
+					<div class="col s6">
 						<img src="img/IMG_20170307_133743_071.jpg" alt="" class="responsive-img"> </div>
 
-					<div class="col m6">
+					<div class="col s6">
 						<img src="img/IMG_20170307_133743_071.jpg" alt="" class="responsive-img">
 					</div>
-					<div class="col m6">
+					<div class="col s6">
 						<img src="img/IMG_20170307_133743_071.jpg" alt="" class="responsive-img"> </div>
 
-					<div class="col m6">
+					<div class="col s6">
 						<img src="img/IMG_20170307_133743_071.jpg" alt="" class="responsive-img">
 					</div>
-					<div class="col m6">
+					<div class="col s6">
 						<img src="img/IMG_20170307_133743_071.jpg" alt="" class="responsive-img"> </div>
 				</div>
 			</div>
 		</div>
 
-		<div class="col s9">
+		<div class="col s12 m9">
 			<div class="card card-blue">
 				<div class="row">
 
