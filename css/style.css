@@ -147,7 +147,7 @@ h5.title-page {
 	text-align: center;
 	text-transform: uppercase;
 	margin-top: 20px;
-	margin-bottom: 30px;
+	margin-bottom: 60px;
 }
 
 .card-grey h5.title-page {
@@ -249,7 +249,7 @@ ul.tabs.tab-chats .tab a:focus.active {
 }
 
 .carousel {
-	height: 700px!important;
+	height: 1000px!important;
 }
 
 /*--calendrier--*/

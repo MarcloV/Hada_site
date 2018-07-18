@@ -20,43 +20,46 @@
 		<a href="">Déconnexion</a>
 	</div>
 	<div class="side-content">
-			<div class="bloc-chat">
-				<ul>
-					<li class="li-chat">
-						<a href="profil_chat.php">
+		<div class="bloc-chat">
+			<ul>
+				<li class="li-chat">
+					<a href="profil_chat.php">
 							<img src="img/IMG_20170307_133743_071.jpg" alt="" class="photo-chat"><p>Ada</p>
 						</a>
-					</li>
-				</ul>
-			</div>
-			<div class="link">
-				<ul>
-					<li>
-						<a href="sante.php">Santé</a>
-					</li>
-					<li>
-						<a href="alimentation.php">Alimentation</a>
-					</li>
-					<li>
-						<a href="hygiene.php">Hygiène</a>
-					</li>
-					<li>
-						<a href="securite.php">Securité</a>
-					</li>
-					<li>
-						<a href="calendar.php">Calendrier</a>
-					</li>
-					<li>
-						<a href="">Veterinaires</a>
-					</li>
-					<li>
-						<a href="">Cat Sitters</a>
-					</li>
-					<li>
-						<a href="">Forum</a>
-					</li>
-				</ul>
-			</div>
+				</li>
+			</ul>
+		</div>
+		<div class="link">
+			<ul>
+				<li>
+					<a href="admin.php">Accueil</a>
+				</li>
+				<li>
+					<a href="sante.php">Santé</a>
+				</li>
+				<li>
+					<a href="alimentation.php">Alimentation</a>
+				</li>
+				<li>
+					<a href="hygiene.php">Hygiène</a>
+				</li>
+				<li>
+					<a href="securite.php">Securité</a>
+				</li>
+				<li>
+					<a href="calendar.php">Calendrier</a>
+				</li>
+				<li>
+					<a href="">Veterinaires</a>
+				</li>
+				<li>
+					<a href="">Cat Sitters</a>
+				</li>
+				<li>
+					<a href="">Forum</a>
+				</li>
+			</ul>
+		</div>
 		</a>
 	</div>
 </div>

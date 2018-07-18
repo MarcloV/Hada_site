@@ -14,13 +14,10 @@
 				<div id="card">
 					<div class="front">
 						<div class="card card-blue">
+
 							<div class="row">
 								<div class="col s12">
-									<ul class="tabs tab-chats">
-										<li class="tab col s3"><a href="#test-swipe-1">Chat 1</a></li>
-										<li class="tab col s3"><a class="active" href="#test-swipe-2">Chat 2</a></li>
-										<li class="tab col s3"><a href="#test-swipe-3">Chat 3</a></li>
-									</ul>
+									<h5 class="title-page">Calendrier</h5>
 									<div class="grey lighten-4">
 										<div class="row">
 											<div class="col s12" style="text-align:center">
@@ -100,7 +97,7 @@
 				defaultView: viewCal,
 				eventLimit: true, // allow "more" link when too many events
 				events: "php/events.php"
-				
+
 			});
 
 			$('.fc-right button').addClass('waves-effect waves-light btn');
