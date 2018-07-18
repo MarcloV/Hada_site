@@ -8,6 +8,9 @@ body {}
 	margin: 0 -.75rem;
 }
 
+
+/*ACCUEIL*/
+
 .colacc-left {
 	padding: 0 !important;
 }
@@ -19,7 +22,7 @@ body {}
 
 .imageacc {
 	height: 50vh;
-	background-image: url(img/chat-assis-avec-ordinateur-.jpg);
+	background-image: url(../img/chat-assis-avec-ordinateur-.jpg);
 	background-position: right;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -55,12 +58,15 @@ body {}
 .cont100.signin {
 	display: inline-block;
 	height: 100vh;
-	background-image: url(img/Sans-titre-2.jpg);
+	background-image: url(../img/Sans-titre-2.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 }
 
-/*-----------------*/
+
+
+
+/*-------SIDEBAR----------*/
 
 .sidenav {}
 
@@ -91,8 +97,206 @@ body {}
 }
 
 .side-content .bloc-chat .photo-chat {
-	width: 40px;
-	border-radius: 20px;
+	width: 48px;
+	border-radius: 24px;
 	float: left;
 	margin-right: 20px;
+}
+
+.side-content .bloc-chat p {
+	float: left;
+	margin: 0;
+}
+
+nav a.sidenav-trigger {
+	display: block !important;
+	float: right;
+}
+
+nav .brand-logo {
+	display: flex !important;
+	flex-direction: column;
+	justify-content: center;
+	height: 100%;
+}
+
+nav .brand-logo img {
+	height: 45px;
+}
+
+.sidenav ul li.li-chat a {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	height: 68px;
+}
+
+
+/*-----*/
+
+.card-blue {
+	background-color: #7CCBE1 !important;
+}
+
+.card-grey {
+	background-color: #f5f5f5 !important;
+}
+
+h5.title-page {
+	color: #FFFFFF;
+	font-weight: 600;
+	text-align: center;
+	text-transform: uppercase;
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+
+.card-grey h5.title-page {
+	color: #000;
+}
+
+ul.tab-chats {}
+
+ul.tabs.tab-chats .tab a {
+	color: #616161;
+	font-weight: 600;
+}
+
+ul.tabs.tab-chats .tab a.active {
+	color: #009688;
+}
+
+ul.tabs.tab-chats .indicator {
+	background-color: #009688;
+}
+
+ul.tabs.tab-chats .tab a:focus,
+ul.tabs.tab-chats .tab a:focus.active {
+	background-color: rgba(0, 150, 136, 0.05)
+}
+
+
+
+
+/*PARAM*/
+
+.switch {
+	text-align: right;
+}
+
+
+/*ADMINISTRATION*/
+
+.admin .left .card {
+	background-color: #7ccbe1;
+}
+
+.admin .left .card .row,
+.admin .center .card .row {
+	margin: 0;
+}
+
+.admin .left .card img.pp {
+	width: 100%;
+	border-radius: 50%;
+	margin: .75rem 0;
+}
+
+.admin .pseudo {
+	color: #fff;
+	text-align: center;
+	font-size: 2rem;
+	margin-bottom: 20px;
+}
+
+.admin .text-left {
+	font-family: 'Arapey', serif;
+	font-size: 1.4rem;
+}
+
+.admin .center {
+	text-align: left !important;
+}
+
+.admin .center .card {
+	background-color: #7ccbe1;
+	padding: 20px;
+	text-align: left;
+}
+
+.admin .center .card .front,
+.admin .center .card .back {
+	position: relative !important;
+}
+
+.admin .center .card .front .row {
+	padding: 0;
+}
+
+.admin .center .back {
+	visibility: hidden;
+}
+
+
+
+.admin .center .card .card-cat {
+	background-color: #fff;
+	padding: 10px;
+}
+
+.admin .center .card .card-cat img {
+	width: 70px;
+	border-radius: 50%;
+}
+
+.carousel {
+	height: 700px!important;
+}
+
+/*--calendrier--*/
+
+.calendar #calendar {
+	padding: 20px;
+	background-color: #fff;
+}
+
+.calendar #calendar .fc-button-group button {
+	margin: 5px;
+}
+
+
+
+
+/*MARCELLO*/
+
+.card .row {
+	margin: 0 !important;
+	padding: 20px;
+}
+
+
+#ligne {
+	background-color: #7CCBE1;
+	height: 2px;
+}
+
+.color-rouge {
+	color: #CB8A8A;
+}
+
+#popup {
+	width: 50%;
+}
+
+.color-vert {
+	color: #009688;
+}
+
+.bg-color-rouge {
+	background-color: #fff;
+}
+
+/*SONIA*/
+
+h3 {
+	font-family: 'Arapey', serif;
 }
