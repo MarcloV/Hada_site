@@ -56,19 +56,29 @@
 									$recup_infos = "SELECT * FROM chats WHERE id_utilisateur = '$ssid'";
 									$query = mysqli_query($connect, $recup_infos);
 									while($line = mysqli_fetch_assoc($query)) 
-									{ ?>
-									<a href="#">
-										<div class="card horizontal card-cat">
-											<div class="card-image">
-												<img src="img/IMG_20170307_133743_071.jpg">
+									{
+										$id_chat = $line['id'];
+										$query_attributs = mysqli_query($connect, "SELECT attributs.nom AS nom, attribut_chat.valeur AS valeur FROM attribut_chat INNER JOIN attributs ON attributs.id = attribut_chat.id_attribut WHERE attribut_chat.id_chat = '$id_chat' AND attribut_chat.afficherdashbord='1'");
+										?>
+										<a href="profil_chat.php?id_chat=<?php echo $id_chat ?>">
+											<div class="card horizontal card-cat">
+												<div class="card-image">
+													<img src="img/IMG_20170307_133743_071.jpg">
+												</div>
+												<div class="card-content">
+													<p>
+														<?php echo $line['nom'];?>
+													</p>
+													<ul>
+														<?php
+														while($attribut = mysqli_fetch_assoc($query_attributs)) {
+															echo "<li>".$attribut['nom']." <span>".$attribut['valeur']."</span></li>";
+														}
+														?>
+													</ul>
+												</div>
 											</div>
-											<div class="card-content">
-												<p>
-													<?php echo $line['nom'];?>
-												</p>
-											</div>
-										</div>
-									</a>
+										</a>
 									<?php }
 								} ?>
 									<button class="waves-effect waves-light btn" id="btn-flip">Ajouter un chat</button>
