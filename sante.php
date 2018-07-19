@@ -1,3 +1,6 @@
+<?php
+	session_start();	?>
+
 <!doctype html>
 
 <html>
@@ -33,17 +36,7 @@
 									type: 'line',
 									data: {
 										labels: <?php echo $j_dates ?>,
-										datasets: [{
-											label: 'Ada',
-											data: <?php echo $j_poids ?>,
-											backgroundColor: [
-												'rgba(255, 99, 132, 0.2)'
-											],
-											borderColor: [
-												'rgba(255,99,132,1)',
-											],
-											borderWidth: 1
-										}]
+										datasets: <?php echo $j_chats ?>
 									},
 									options: {
 										spanGaps: true,

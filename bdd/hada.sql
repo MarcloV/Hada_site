@@ -126,7 +126,7 @@ CREATE TABLE IF NOT EXISTS `chat_pathologie` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `chat_pathologie` (`id_chat`,`id_pathologie`) VALUES
-('1','2'),('1','3')
+('1','2'),('1','3');
 
 -- --------------------------------------------------------
 
@@ -199,8 +199,43 @@ INSERT INTO `utilisateur` (`email`, `password`, `pseudo`, `nom`, `prenom`, `phot
 --
 
 CREATE TABLE `poids` (
+  `id` int(11) NOT NULL,
   `id_chat` int(11) NOT NULL,
   `poid` int(11) NOT NULL,
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `poids`
+--
+
+INSERT INTO `poids` (`id`, `id_chat`, `poid`, `date`) VALUES
+(1, 1, 50, '2018-07-17'),
+(2, 1, 55, '2018-07-19'),
+(3, 2, 20, '2018-07-10'),
+(4, 2, 22, '2018-07-16');
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `poids`
+--
+ALTER TABLE `poids`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `poids`
+--
+ALTER TABLE `poids`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
