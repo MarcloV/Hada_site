@@ -21,6 +21,7 @@ if ($connect) {
 			if (password_verify($mdp, $verif_mdp)) {
 				session_start();
 				$_SESSION['id'] = $ssid;
+				echo "<script>window.location.assign('admin.php')</script>";
 			} else {
 				echo "Adresse email ou mot de passe incorrect";
 			}

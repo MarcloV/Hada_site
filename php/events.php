@@ -1,4 +1,9 @@
 <?php
+
+/*$id_user = $_SESSION['id'];*/ 
+
+$id_user = 1;
+
 // connexion à la base de données
  try {
  $bdd = new PDO('mysql:host=localhost;dbname=hada', 'root', '');
@@ -10,7 +15,7 @@
  $json = array();
 
  // requête qui récupère les événements
- $requete = "SELECT * FROM evenements ORDER BY id";
+ $requete = "SELECT * FROM evenement WHERE id_user = '$id_user'";
 
  // exécution de la requête
  $resultat = $bdd->query($requete) or die(print_r($bdd->errorInfo()));

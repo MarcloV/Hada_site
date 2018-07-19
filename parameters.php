@@ -2,6 +2,11 @@
 
 <html>
 
+
+	<?php
+	session_start();
+	?>
+
 <?php include "header.php"?>
 
 <body>
@@ -23,7 +28,7 @@
 							<!--para1-->
 							<tr>
 								<td class="col s9">
-									<p>Input text for a single line field with a max</p>
+									<p>M'envoyer des notifications par email</p>
 								</td>
 								<td class="col s3">
 									<!-- Switch -->

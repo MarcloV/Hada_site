@@ -56,9 +56,26 @@
 								<tr>
 									<td><label for="">Poids</label><input type="text" id="poid"></td>
 									<td><label for="date">Date</label><input id="date" type="text" class="datepicker" value="<?php echo date('d/m/Y'); ?>"></td>
+									<td><label>Chat</label>
+									<select id="chat_select">
+									<?php $connect = mysqli_connect("localhost","root","","hada");
+										$id_user = 1;
+										if ($connect) {
+											$data_chats = "SELECT * FROM chats WHERE id_utilisateur = '$id_user'";
+											$que_chats = mysqli_query($connect, $data_chats);
+											if ($que_chats != FALSE) {
+												while($row_chat = mysqli_fetch_assoc($que_chats)) {
+										?>
+											<option value="<?php echo $row_chat['id']; ?>"><?php echo $row_chat['nom']; ?></option>
+										<?php }
+											}
+										} else { echo 'Il y a eu une erreur. Veuillez réessayer !'; } ?>
+										</select>
+									</td>
 									<td><button class="btn waves-effect waves-light" id="ajout-poid">Ajouter une mesure</button></td>
 								</tr>
 							</table>
+							<div id="result"></div>
 							<div id="result"></div>
 							<!--<div class="divider"></div>-->
 						</div>
@@ -98,7 +115,8 @@
 					url: "php/form-poid-chat.php",
 					data: {
 						date: $('#date').val(),
-						poid: $('#poid').val()
+						poid: $('#poid').val(),
+						val: $('#chat_select').val()
 					},
 					type: "POST",
 					success: function(data) {
@@ -107,6 +125,10 @@
 				});
 			});
 		});
+			
+			$(document).ready(function() {
+				$('select').formSelect();
+			});
 
 	</script>
 

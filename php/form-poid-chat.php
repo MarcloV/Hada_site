@@ -3,9 +3,9 @@
 $connect = mysqli_connect("localhost","root","","hada");
 
 if ($connect) {
-	$id_chat = 1;
 	$poid = $_POST['poid'];
 	$date = $_POST['date'];
+	$id_chat  = $_POST['val'];
 	$r_date = date_format(date_create_from_format('d/m/Y', $date), 'Y-m-d');
 	
 	$insert = "INSERT INTO poids (id_chat, poid, date) VALUES ('$id_chat', '$poid', '$r_date')";

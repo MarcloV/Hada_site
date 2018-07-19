@@ -4,7 +4,7 @@
 	<div class="nav-wrapper">
 		<div class="row">
 			<div class="col s12">
-				<a href="#" class="brand-logo"><img src="img/logo-w.png" alt="" /></a>
+				<a href="admin.php" class="brand-logo"><img src="img/logo-w.png" alt="" /></a>
 				<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 			</div>
 		</div>
@@ -37,7 +37,7 @@
 
 					?>
 					<li class="li-chat">
-						<a href="profil-chat.php">
+						<a href="profil_chat.php?id_chat=<?php echo $line['id'] ?>">
 							<img src="img/IMG_20170307_133743_071.jpg" alt="" class="photo-chat"><p><?php echo $line['nom'];?></p>
 						</a>
 					</li>
@@ -67,7 +67,7 @@
 						<a href="calendar.php">Calendrier</a>
 					</li>
 					<li>
-						<a href="">Veterinaires</a>
+						<a href="veterinaires.php">Veterinaires</a>
 					</li>
 					<li>
 						<a href="">Cat Sitters</a>

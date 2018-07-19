@@ -4,7 +4,7 @@ $connect = mysqli_connect("localhost","root","","hada");
 
 if ($connect) {
 
-	$id_user = 1;
+	$id_user = $_SESSION['id'];
 	$date = date("Y-m-d");
 	$nom_alim = $_POST['nom_alim'];
 	$stock = $_POST['stock'];

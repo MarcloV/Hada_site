@@ -62,7 +62,7 @@
 						type: "POST",
 						success: function(data) {
 							$('#verif').html(data);
-							window.location.assign('admin.php')
+							/*window.location.assign('admin.php')*/
 						}
 					});
 				} else {
