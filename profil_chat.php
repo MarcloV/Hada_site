@@ -17,12 +17,30 @@ session_start();
 
 	$chat_selection = -1;
 
+	if((!empty($_POST['action'])) && $_POST['action'] == "addMaladie") {
+		$id_chat_maladie = $_POST['id_chat_maladie'];
+		$id_maladie = $_POST['select_maladie'];
+		$query_chat= "INSERT  INTO chat_pathologie (id_chat,id_pathologie) VALUES ('$id_chat_maladie','$id_maladie')";
+		$result = mysqli_prepare($connect,$query_chat);
+		$ok=mysqli_stmt_execute($result);
+
+		$chat_selection = $id_chat_maladie;
+	}
+
 	if(!empty($_GET['id_chat']))
 		$chat_selection = $_GET['id_chat'];
 
 	if (empty($_SESSION['id'])) {
 		echo 'Error!';
 	} else {
+		$query_maladies = mysqli_query($connect, "SELECT id, nom FROM pathologie");
+
+		$ref_maladies = array();
+		while($attr = mysqli_fetch_assoc($query_maladies)) {
+			$ref_maladies[$attr['id']] = $attr['nom'];
+		}
+
+
 		$chats = array();
 
 		$ssid = $_SESSION['id'];
@@ -131,13 +149,40 @@ session_start();
 													}
 												?>
 											</ul>
+
+											<div class="row">
+												<form action="#" method="POST">
+													<input type="hidden" name="action" value="addMaladie" />
+													<input type="hidden" name="id_chat_maladie" value="<?php echo $key ?>" />
+													<div class="input-field col s10">
+														<select name="select_maladie">
+															<option value="" disabled selected>Choose your option</option>
+															<?php 
+																foreach(array_diff($ref_maladies,$chat['maladies']) as $key_maladie => $value ){
+																	echo "<option value=\"$key_maladie\">$value</option>";
+																}
+															?>
+														</select>
+													</div>
+													<div class="col s2">
+														<button class="waves-effect waves-light btn" type="submit">Ajouter</button>
+													</div>
+												</form>
+												<br>
+											</div>
+											
 										</div>
 										<div class="divider"></div>
+										<br>
+										<form action="modifier-chat.php" method="POST">
+										<input type="hidden" name="id_chat" value="<?php echo $key ?>" />
+										<button class="waves-effect waves-light btn" type="submit">Modifier</button>
+										</form>
 										<div class="section color-rouge">
 											<div class="card" id="popup" style="margin:auto">
 												<ul class="collapsible">
 													<li>
-														<div class="collapsible-header"><i class="material-icons">filter_drama</i>NOTIFICATIONS</div>
+														<div class="collapsible-header"><i class="material-icons">filter_drama</i>NOTIFICATIONS (prochainement)</div>
 														<div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
 													</li>
 												</ul>
@@ -146,7 +191,7 @@ session_start();
 									</div>
 								</div>
 							</div>
-							<?php } ?>
+						<?php } ?>
 					</div>
 				</div>
 			</div>
@@ -156,6 +201,7 @@ session_start();
 	<script>
 		$(document).ready(function(){
 			$('.tabs').tabs();
+			$('select').formSelect();
 		});
 	</script>
 

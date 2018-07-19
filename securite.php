@@ -20,19 +20,35 @@
 					<ul class="collapsible expandable">
 						<li>
 							<div class="collapsible-header">
-								<h5>titre 1</h5>
+								<h5>Affiche informative en cas de catastrophe</h5>
 							</div>
 							<div class="collapsible-body" id="fondAccordeon">
-								<!-- fond pardéfaut est le bleu du site, je l'ai changer dans le style.css en gris clair-->
-								<span>Lorem ipsum dolor sit amet.</span>
+								<img src="img/securite/Affiche_animaux.jpg" alt="affichette pour indiquer la présence d'animaux">
+
 							</div>
 						</li>
 						<li>
 							<div class="collapsible-header">
-								<h5>titre 2</h5>
+								<h5>Aliment dangereux</h5>
 							</div>
 							<div class="collapsible-body" id="fondAccordeon">
-								<span>Lorem ipsum dolor sit amet.</span>
+							<img src="img/securite/aliment_dangereux.jpg" alt="affichette representant les aliment courant dangereux">
+							</div>
+						</li>
+						<li>
+							<div class="collapsible-header">
+								<h5>schéma d'un massage cardiaque</h5>
+							</div>
+							<div class="collapsible-body" id="fondAccordeon">
+							<img src="img/securite/massage-cardiaque.jpg" alt="schéma explicatif d'un massage cardiaque sur un chien">
+							</div>
+						</li>
+						<li>
+							<div class="collapsible-header">
+								<h5>Dépliant sur les intoxications possible qu'on trouve dans une maison</h5>
+							</div>
+							<div class="collapsible-body" id="fondAccordeon">
+								<a href="img/securite/depliant-intoxication.pdf" target="_blank">Dépliant sur les intoxications divers qu'on trouve dans la maison</a>
 							</div>
 						</li>
 					</ul>

@@ -15,7 +15,7 @@
 <div id="slide-out" class="sidenav">
 	<div class="side-header">
 		<a href="#" data-target="slide-out" class="sidenav-close"><i class="material-icons">close</i></a><br/>
-		<a href="account2.php">Mon compte</a><br/>
+		<!-- <a href="account2.php">Mon compte</a><br/> -->
 		<a href="parameters.php">Paramètres</a><br/>
 		<a href="logout.php" >Déconnexion</a>
 	</div>
@@ -67,14 +67,14 @@
 						<a href="calendar.php">Calendrier</a>
 					</li>
 					<li>
-						<a href="">Veterinaires</a>
+						<a href="veterinaires.php">Veterinaires</a>
 					</li>
-					<li>
+					<!-- <li>
 						<a href="">Cat Sitters</a>
 					</li>
 					<li>
 						<a href="">Forum</a>
-					</li>
+					</li> -->
 				</ul>
 			</div>
 		</a>

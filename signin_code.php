@@ -21,7 +21,7 @@ if($check_email==1){
     $response["message"] = "Votre inscription est terminée, veuillez vous connecter";
   }else{
     $response["success"] = false;
-    $response["message"] = "Echec de l'inscription (" . mysqli_error($con) . ")";
+    $response["message"] = "Echec de l'inscription (" . mysqli_error($connect) . ")";
   }
 }
 
