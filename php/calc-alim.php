@@ -12,7 +12,7 @@ if ($connect) {
 	
 
 
-	$insert = "INSERT INTO alimentation (id_user, date, nom_alim, stock, q_jour) VALUES ('$id_user', '$date', '$nom_alim', '$stock', '$q_jour')";
+	$insert = "INSERT INTO alimentation (id_utilisateur, date, nom, stock, quantite) VALUES ('$id_user', '$date', '$nom_alim', '$stock', '$q_jour')";
 
 	$execute = mysqli_query($connect, $insert);
 	

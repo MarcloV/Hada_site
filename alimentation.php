@@ -38,7 +38,7 @@ $connect = mysqli_connect("localhost","root","","hada");
 if ($connect) {
 	$id_user = 1;
 
-	$recup_infos = "SELECT * FROM alimentation WHERE id_user = '$id_user'";
+	$recup_infos = "SELECT * FROM alimentation WHERE id_utilisateur = '$id_user'";
 	$query = mysqli_query($connect, $recup_infos);
 	
 	if ($query != FALSE) {
@@ -48,20 +48,20 @@ if ($connect) {
 		$jj = date_create(date("Y-m-d"));
 		$nb_jour = date_diff($date, $jj );
 		$jour = $nb_jour->format('%R%a');
-		$stok = $line['stock']/$line['q_jour'];
+		$stok = $line['stock']/$line['quantite'];
 		$stock = $jour*$stok;
 		$reelstock = $line['stock'] - $stock;
 ?>
 
 									<tr>
 										<td style="padding:10px">
-											<?php echo $line['nom_alim'] ?>
+											<?php echo $line['nom'] ?>
 										</td>
 										<td style="padding:10px">
 											<?php echo $line['stock'] ?>
 										</td>
 										<td style="padding:10px">
-											<?php echo $line['q_jour'] ?>
+											<?php echo $line['quantite'] ?>
 										</td>
 										<td style="padding:10px">
 											<?php echo $reelstock ?>

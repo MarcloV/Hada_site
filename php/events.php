@@ -10,7 +10,7 @@
  $json = array();
 
  // requête qui récupère les événements
- $requete = "SELECT * FROM evenement ORDER BY id";
+ $requete = "SELECT * FROM evenements ORDER BY id";
 
  // exécution de la requête
  $resultat = $bdd->query($requete) or die(print_r($bdd->errorInfo()));
